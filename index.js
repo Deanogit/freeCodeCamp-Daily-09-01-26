@@ -24,6 +24,45 @@
 //   // return n;
 // }
 
+// function isCircularPrime(n) {
+//   // console.log(typeof n)
+
+//   // isPrime
+//   let isPrime = true;
+
+//   // How to rotate through
+//   // 197
+//   // 971
+//   // 719
+
+//   // Number to string
+//   const str = n.toString();
+
+//   // split
+//   const split = str.split('');
+//   console.log(split.length);
+
+//   for (let i = 0; i < str.length - 1; i++) {
+//     // change order
+//     let check = str.split(1) + str[0];
+//     // use helper checking function
+//   }
+
+//   return isPrime;
+//   // check for primes
+//   // return n;
+// }
+
+// function checkPrime(n) {
+//   // A number is prime if it’s greater than 1 and not divisible by any number from 2 up to its square root.
+//   if (n > 1) {
+//     for (let i = 2; i < Math.sqrt(n); i++) {
+//       // not divisible by i
+//       n % i === 0 ? true : false;
+//     }
+//   }
+// }
+
 function isCircularPrime(n) {
   // console.log(typeof n)
 
@@ -55,10 +94,10 @@ function isCircularPrime(n) {
 
 function checkPrime(n) {
   // A number is prime if it’s greater than 1 and not divisible by any number from 2 up to its square root.
-  if (n > 1) {
-    for (let i = 2; i < Math.sqrt(n); i++) {
-      // not divisible by i
-      n % i === 0 ? true : false;
-    }
+
+  if (n <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    // not divisible by i
+    n % i === 0 ? false : true;
   }
 }

@@ -62,12 +62,11 @@
 //     }
 //   }
 // }
-
 function isCircularPrime(n) {
   // console.log(typeof n)
 
   // isPrime
-  let isPrime = true;
+  // let isPrime = true
 
   // How to rotate through
   // 197
@@ -75,19 +74,23 @@ function isCircularPrime(n) {
   // 719
 
   // Number to string
-  const str = n.toString();
+  let str = n.toString();
 
   // split
-  const split = str.split('');
-  console.log(split.length);
+  // const split = str.split("");
+  // console.log(split.length )
 
-  for (let i = 0; i < str.length - 1; i++) {
+  for (let i = 0; i < str.length; i++) {
+    if (!checkPrime(Number(str))) return false;
+
+    str = str.slice(1) + str[0];
     // change order
-    let check = str.split(1) + str[0];
+    // let check = Number.parseInt(str.slice(1) + str[0])
     // use helper checking function
+    // console.log(check)
   }
 
-  return isPrime;
+  return true;
   // check for primes
   // return n;
 }
@@ -98,6 +101,7 @@ function checkPrime(n) {
   if (n <= 1) return false;
   for (let i = 2; i <= Math.sqrt(n); i++) {
     // not divisible by i
-    n % i === 0 ? false : true;
+    if (n % i === 0) return false;
   }
+  return true;
 }
